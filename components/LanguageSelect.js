@@ -37,6 +37,7 @@ export default function LanguageSelect() {
 
   const onSelectFromLanguage = (language) => {
     if (selectedFromLanguage === language) {
+      setFromLanguageModalVisible(false);
       return; // Don't update if selecting the same language
     }
     setSelectedFromLanguage(language);
@@ -51,6 +52,7 @@ export default function LanguageSelect() {
 
   const onSelectToLanguage = (language) => {
     if (selectedToLanguage === language) {
+      setToLanguageModalVisible(false);
       return;
     }
     setSelectedToLanguage(language);

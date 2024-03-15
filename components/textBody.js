@@ -17,7 +17,7 @@ import clearIcon from "../assets/clearIcon.png";
 
 export default function TextBody() {
   const [fromText, setFromText] = useState("");
-  const [toText, setToText] = useState("example");
+  const [toText, setToText] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const [fontSize, setFontSize] = useState(35);
