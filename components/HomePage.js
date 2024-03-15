@@ -8,6 +8,8 @@ import {
   TextInput,
   Modal,
   Pressable,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 import profilePic from "../assets/profilePic.jpg";
 import Arrow from "react-native-arrow";
@@ -22,6 +24,7 @@ export default function Homepage() {
     <>
       <View style={homepageStyle.container}>
         {/* header and body */}
+
         <View style={homepageStyle.body}>
           {/* header */}
           <View style={homepageStyle.header}>
@@ -31,10 +34,12 @@ export default function Homepage() {
           {/* body */}
           <TextBody />
         </View>
+
         {/*  footer */}
         <View style={homepageStyle.foot}>
           {/* language select */}
           <LanguageSelect />
+
           {/*microphone and conversation button*/}
           <View style={homepageStyle.convoAndMic}>
             <View style={homepageStyle.convobutton}>

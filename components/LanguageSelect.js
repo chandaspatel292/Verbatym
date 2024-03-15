@@ -134,7 +134,7 @@ export default function LanguageSelect() {
       </Pressable>
 
       <Modal
-        animationType="slide"
+        animationType="fade"
         transparent={false}
         visible={fromLanguageModalVisible}
         onRequestClose={() => {
@@ -185,7 +185,7 @@ export default function LanguageSelect() {
       </Pressable>
 
       <Modal
-        animationType="slide"
+        animationType="fade"
         transparent={false}
         visible={toLanguageModalVisible}
         onRequestClose={() => {

@@ -31,15 +31,7 @@ export const homepageStyle = StyleSheet.create({
     height: 50,
     borderRadius: 50,
   },
-  bodyText: {
-    color: "#f4f5f4",
-    fontSize: 35,
-    verticalAlign: "top",
-  },
-  bodyTextView: {
-    padding: 24,
-    paddingLeft: 24,
-  },
+
   foot: { flex: 4, backgroundColor: "#1e1f21" },
   languageSelect: {
     flexDirection: "row",
