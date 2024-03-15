@@ -67,11 +67,14 @@ export default function LanguageSelect() {
     <Pressable
       key={index.toString()}
       onPress={() => {
-        if (searchMode) {
+        /* if (searchMode) {
           onSelectLanguage(language);
         } else {
           onSelectFromLanguage(language);
-        }
+        } */
+        onSelectFromLanguage(language);
+        setSearchQuery("");
+        setSearchMode(false);
       }}
     >
       <Text style={languageSelectStyle.languageItem}>{language}</Text>
@@ -81,18 +84,21 @@ export default function LanguageSelect() {
     <Pressable
       key={index.toString()}
       onPress={() => {
-        if (searchMode) {
+        /* if (searchMode) {
           onSelectLanguage(language);
         } else {
           onSelectToLanguage(language);
-        }
+        } */
+        onSelectToLanguage(language);
+        setSearchQuery("");
+        setSearchMode(false);
       }}
     >
       <Text style={languageSelectStyle.languageItem}>{language}</Text>
     </Pressable>
   );
 
-  const onSelectLanguage = (language) => {
+  /* const onSelectLanguage = (language) => {
     if (searchMode) {
       setSelectedToLanguage(language);
       setToLanguageModalVisible(false);
@@ -100,7 +106,7 @@ export default function LanguageSelect() {
       setSelectedFromLanguage(language);
       setFromLanguageModalVisible(false);
     }
-  };
+  }; */
 
   useEffect(() => {
     const backAction = () => {
