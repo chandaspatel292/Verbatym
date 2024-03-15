@@ -92,8 +92,8 @@ export default function LanguageSelect() {
       </Modal>
       <Pressable onPress={onSwapLanguages}>
         <View style={homepageStyle.selectorArrows}>
-          <Arrow size={8} color={"white"} />
-          <Arrow size={8} direction="left" color={"white"} />
+          <Arrow size={10} color={"white"} />
+          <Arrow size={10} direction="left" color={"white"} />
         </View>
       </Pressable>
       <Pressable onPress={onPressToLanguage}>
