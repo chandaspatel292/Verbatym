@@ -15,6 +15,7 @@ import convobutton from "../assets/speechBubble.png";
 import micbutton from "../assets/microphone.png";
 import { homepageStyle } from "./homepageStyle";
 import LanguageSelect from "./LanguageSelect";
+import TextBody from "./textBody";
 
 export default function Homepage() {
   return (
@@ -28,9 +29,7 @@ export default function Homepage() {
             <Image style={homepageStyle.profilePic} source={profilePic} />
           </View>
           {/* body */}
-          <View style={homepageStyle.bodyTextView}>
-            <Text style={homepageStyle.bodyText}>Enter text</Text>
-          </View>
+          <TextBody />
         </View>
         {/*  footer */}
         <View style={homepageStyle.foot}>
