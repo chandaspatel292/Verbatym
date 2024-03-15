@@ -34,7 +34,7 @@ export const homepageStyle = StyleSheet.create({
   bodyText: {
     color: "#c5c7c6",
     fontSize: 35,
-    textAlignVertical: "top",
+    verticalAlign: "top",
   },
   bodyTextView: {
     padding: 24,
