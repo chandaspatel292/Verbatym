@@ -146,6 +146,7 @@ export default function LanguageSelect() {
         onRequestClose={() => {
           setFromLanguageModalVisible(false);
           setSearchMode(false);
+          setSearchQuery("");
           // Reset search mode when modal is closed
         }}
       >
@@ -197,6 +198,7 @@ export default function LanguageSelect() {
         onRequestClose={() => {
           setToLanguageModalVisible(false);
           setSearchMode(false);
+          setSearchQuery("");
           // Reset search mode when modal is closed
         }}
       >
