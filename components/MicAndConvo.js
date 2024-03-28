@@ -3,9 +3,11 @@ import {
   StyleSheet,
   View,
   Text,
+  Image,
   Button,
   SafeAreaView,
   PermissionsAndroid,
+  Pressable,
 } from 'react-native';
 import GoogleCloudSpeechToText, {
   SpeechRecognizeEvent,
@@ -15,14 +17,17 @@ import GoogleCloudSpeechToText, {
   SpeechStartEvent,
 } from 'react-native-google-cloud-speech-to-text';
 import { useEffect } from 'react';
+import { homepageStyle } from "./homepageStyle";
+import convobutton from "../assets/speechBubble.png";
+import micbutton from "../assets/microphone.png";
 
-const Separator = () => <View style={styles.separator} />;
+/* const Separator = () => <View style={styles.separator} />; */
 
-export default function SpeechToText() {
+export default function MicAndConvo() {
   const [transcript, setResult] = React.useState('');
 
   useEffect(() => {
-    PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, /* {
+    PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,/*  {
       title: 'Cool Photo App Camera Permission',
       message:
         'Cool Photo App needs access to your camera ' +
@@ -33,8 +38,37 @@ export default function SpeechToText() {
     } */);
   }, []);
 
+  /* useEffect(() => {
+    const requestAudioPermission = async () => {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+          {
+            title: 'Verbatym Audio Permission',
+            message:
+              'Verbatym needs access to your Microphone ' +
+              'so you can record audio.',
+            buttonNeutral: 'Ask Me Later',
+            buttonNegative: 'Cancel',
+            buttonPositive: 'OK',
+          }
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          console.log('Record audio permission granted');
+        } else {
+          console.log('Record audio permission denied');
+        }
+      } catch (error) {
+        console.error('Error while requesting record audio permission:', error);
+      }
+    };
+  
+    requestAudioPermission();
+  }, []); */
+
+
   useEffect(() => {
-    GoogleCloudSpeechToText.setApiKey('key_____');
+    //GoogleCloudSpeechToText.setApiKey('key_____');
     GoogleCloudSpeechToText.onVoice(onVoice);
     GoogleCloudSpeechToText.onVoiceStart(onVoiceStart);
     GoogleCloudSpeechToText.onVoiceEnd(onVoiceEnd);
@@ -83,42 +117,23 @@ export default function SpeechToText() {
     await GoogleCloudSpeechToText.stop();
   };
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <Text style={styles.title}>{transcript}</Text>
-        <Button title="Start me" onPress={startRecognizing} />
-      </View>
-      <Separator />
-      <View>
-        <Text style={styles.title}>
-          Adjust the color in a way that looks standard on each platform. On
-          iOS, the color prop controls the color of the text. On Android, the
-          color adjusts the background color of the button.
-        </Text>
-        <Button title="Stop me" color="#f194ff" onPress={stopRecognizing} />
-      </View>
-    </SafeAreaView>
-  );
+  return(
+    <View style={homepageStyle.convoAndMic}>
+            <View style={homepageStyle.convobutton}>
+              <Image
+                source={convobutton}
+                style={homepageStyle.convobuttonpng}  
+              />
+            </View>
+            <Pressable onPress={startRecognizing}>
+            <View style={homepageStyle.micbutton}>
+              <Image source={micbutton} style={homepageStyle.micbuttonpng} />
+            </View>
+            </Pressable>
+          </View>
+  )
+
+  
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
-  },
-  title: {
-    textAlign: 'center',
-    marginVertical: 8,
-  },
-  fixToText: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-});
+

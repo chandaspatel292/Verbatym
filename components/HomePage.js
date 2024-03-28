@@ -19,6 +19,9 @@ import { homepageStyle } from "./homepageStyle";
 import LanguageSelect from "./LanguageSelect";
 import TextBody from "./textBody";
 
+import MicAndConvo from "./MicAndConvo";
+/* import SpeechToText from "../Backend/speechToText"; */
+
 export default function Homepage() {
   return (
     <>
@@ -39,19 +42,23 @@ export default function Homepage() {
         <View style={homepageStyle.foot}>
           {/* language select */}
           <LanguageSelect />
-
+          <MicAndConvo />
           {/*microphone and conversation button*/}
-          <View style={homepageStyle.convoAndMic}>
+          {/* <View style={homepageStyle.convoAndMic}>
             <View style={homepageStyle.convobutton}>
               <Image
                 source={convobutton}
-                style={homepageStyle.convobuttonpng}
+                style={homepageStyle.convobuttonpng}  
               />
             </View>
+            <Pressable onPress={() => {
+ SpeechToText();
+            }}>
             <View style={homepageStyle.micbutton}>
               <Image source={micbutton} style={homepageStyle.micbuttonpng} />
             </View>
-          </View>
+            </Pressable>
+          </View> */}
         </View>
       </View>
     </>
