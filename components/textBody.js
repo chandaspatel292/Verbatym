@@ -14,6 +14,7 @@ import { homepageStyle } from "./homepageStyle";
 import { textBodyStyle } from "./textBodyStyle";
 import Arrow from "react-native-arrow";
 import clearIcon from "../assets/clearIcon.png";
+import LanguageSelect from "./LanguageSelect";
 
 export default function TextBody() {
   const [fromText, setFromText] = useState("");
@@ -102,6 +103,13 @@ export default function TextBody() {
               </>
             )}
           </ScrollView>
+        </View>
+        <View
+          style={{
+            backgroundColor: "#1e1f21",
+          }}
+        >
+          <LanguageSelect />
         </View>
       </Modal>
     </View>
